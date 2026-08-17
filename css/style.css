@@ -237,37 +237,15 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
   border: 1.5px solid rgba(255, 255, 255, 0.5);
 }
 
+.btn-secondary {
+  background: white;
+  color: var(--green-dark);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
 .btn-small {
   padding: 10px 20px;
   font-size: 0.85rem;
-}
-
-/* Stats */
-.stats {
-  background: var(--blue-dark);
-  color: white;
-  padding: 40px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 800;
-  color: var(--maize);
-}
-
-.stat-label {
-  display: block;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
-  margin-top: 4px;
 }
 
 /* Sections */
@@ -403,57 +381,6 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
 .condition-fair { border-top: 4px solid var(--maize); }
 .condition-poor { border-top: 4px solid #c94f4f; }
 
-/* Timeline */
-.timeline {
-  position: relative;
-  padding-left: 32px;
-  border-left: 3px solid var(--border);
-}
-
-.timeline-item {
-  position: relative;
-  padding-bottom: 44px;
-}
-
-.timeline-item:last-child { padding-bottom: 0; }
-
-.timeline-marker {
-  position: absolute;
-  left: -47px;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--green);
-  color: white;
-  font-weight: 800;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.timeline-item-bridge .timeline-marker {
-  background: var(--paper-alt);
-  color: var(--ink-soft);
-  border: 2px solid var(--border);
-}
-
-.timeline-period {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--green);
-  margin-bottom: 6px;
-}
-
-.timeline-item-bridge .timeline-period { color: var(--ink-soft); }
-
-.timeline-content h3 { font-size: 1.15rem; color: var(--ink); }
-.timeline-content p { margin: 0; color: var(--ink-soft); max-width: 640px; }
-
 /* Involved */
 .involved-grid {
   display: grid;
@@ -581,7 +508,6 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
   .about-grid, .involved-grid, .team-grid, .condition-grid, .contact-grid {
     grid-template-columns: 1fr;
   }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
