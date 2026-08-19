@@ -404,9 +404,10 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
 /* Team */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-bottom: 32px;
+  max-width: 560px;
+  margin: 0 0 32px;
 }
 
 .team-card {
