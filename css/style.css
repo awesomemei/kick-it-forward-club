@@ -405,36 +405,87 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 560px;
+  gap: 32px;
   margin: 0 0 32px;
 }
 
 .team-card {
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
   background: white;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 20px;
+  border-top: 5px solid transparent;
+  border-radius: 20px;
+  padding: 48px 40px;
+  min-height: 260px;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(11, 61, 36, 0.16);
+}
+
+.team-watermark {
+  position: absolute;
+  top: -0.3em;
+  right: 0.1em;
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.team-card-green {
+  border-top-color: var(--green);
+  background: linear-gradient(165deg, white 65%, rgba(23, 122, 68, 0.06));
+}
+.team-card-green .team-watermark { color: rgba(23, 122, 68, 0.09); }
+.team-card-green .team-avatar { box-shadow: 0 10px 24px rgba(23, 122, 68, 0.35); }
+
+.team-card-gold {
+  border-top-color: var(--maize);
+  background: linear-gradient(165deg, white 65%, rgba(255, 203, 5, 0.08));
+}
+.team-card-gold .team-watermark { color: rgba(255, 203, 5, 0.18); }
+.team-card-gold .team-avatar { box-shadow: 0 10px 24px rgba(255, 203, 5, 0.4); }
+
 .team-avatar {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 16px;
+  position: relative;
+  z-index: 1;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 20px;
   border-radius: 50%;
   background: var(--green-dark);
   color: var(--maize);
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.team-card h3 { margin-bottom: 4px; }
-.team-role { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+.team-card h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+.team-role {
+  position: relative;
+  z-index: 1;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
 
 .roles-note {
   background: var(--paper-alt);
@@ -509,6 +560,8 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
   .about-grid, .involved-grid, .team-grid, .condition-grid, .contact-grid {
     grid-template-columns: 1fr;
   }
+  .team-card { padding: 36px 28px; min-height: 0; }
+  .team-watermark { font-size: 5rem; }
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
