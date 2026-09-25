@@ -414,39 +414,71 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
 .involved-card p { color: var(--ink-soft); flex-grow: 1; margin-bottom: 20px; }
 
 /* Donors */
-.donor-list {
+.donor-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--green);
+  border-radius: 20px;
+  padding: 32px 36px;
+  box-shadow: var(--shadow);
+}
+
+.donor-head {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  list-style: none;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 24px;
+}
+
+.donor-head h3 {
   margin: 0;
+  font-size: 1.4rem;
+  color: var(--green-dark);
+}
+
+.donor-total { margin: 0; color: var(--ink-soft); }
+.donor-total strong { font-size: 1.6rem; color: var(--green); }
+
+.donor-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  list-style: none;
+  margin: 0 0 24px;
   padding: 0;
 }
 
-.donor-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 12px 22px;
-  font-weight: 700;
-  font-size: 0.95rem;
+.donor-stats li {
+  background: var(--paper-alt);
+  border-radius: var(--radius);
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.donor-stats strong {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.1;
   color: var(--green-dark);
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.donor-badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(11, 61, 36, 0.14);
+.donor-stats span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
 }
 
-.donor-badge::before {
-  content: "\26BD";
-  font-size: 1rem;
+.donor-details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--green);
 }
+
+.donor-details[open] summary { margin-bottom: 12px; }
 
 /* Team */
 .team-grid {
@@ -617,6 +649,15 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; }
   .hero-visual { order: -1; }
   .hero-logo { max-width: 160px; }
   .hero-actions { justify-content: center; }
+}
+
+@media (max-width: 860px) {
+  .donor-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .donor-stats { grid-template-columns: repeat(2, 1fr); }
+  .donor-card { padding: 24px 20px; }
 }
 
 @media (max-width: 420px) {
